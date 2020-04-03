@@ -1,40 +1,39 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Add customer</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
 </head>
 <body>
-
 <h3>Add a customer</h3>
-<form action="/add" method="POST">
-    <label>First name:</label>
-    <label>
-        <input type="text" name="firstName" size="50"/>
-    </label><br/>
-    <label>Last name:</label>
-    <label>
-        <input type="text" name="lastName" size="50"/>
-    </label><br/>
-    <label>Email:</label>
-    <label>
-        <input type="text" name="emailAddress" size="15"/>
-    </label><br/>
-    <label>Job:</label>
-    <label>
-        <input type="text" name="jobTitle" size="50">
-    </label><br/>
+<form method="POST" th:action="@{/add-customer}" th:object="${customer}">
+    <label>First name*:</label>
+    <input type="text" name="firstName" size="50">
+    <span class="node" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First name error.</span><br>
 
-    <label>WebPage:</label><br/>
-    <label>
-<textarea name="webPage" cols="80" rows="5">
-</textarea>
-    </label><br/>
+    <label>Last name*:</label>
+    <input type="text" name="lastName" size="50">
+    <span class="node" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">First name error.</span><br>
 
-    <input type="submit"/>
-</form>
-<form th:action="@{/logout}" method="post">
-    <input type="submit" value="Sign Out"/>
+    <label>Email address*:</label>
+    <input type="text" name="emailAddress" size="50">
+    <span class="node" th:if="${#fields.hasErrors('emailAddress')}" th:errors="*{emailAddress}">First name error.</span><br>
+
+    <label>Job title:</label>
+    <input type="text" name="jobTitle" size="50"><br>
+
+    <label>Mobile phone:</label>
+    <input type="text" name="mobilePhone" size="50"><br>
+
+    <label>City:</label>
+    <input type="text" name="city" size="50"><br>
+
+    <label>Web page:</label>
+    <input type="text" name="webPage" size="50"><br>
+
+    <span class="node">Required fields are marked as *</span><br>
+    <input type="submit" value="Save">
 </form>
 </body>
 </html>

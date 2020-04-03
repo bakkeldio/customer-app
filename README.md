@@ -1,2 +1,0 @@
-# customer-app
-Customer Application

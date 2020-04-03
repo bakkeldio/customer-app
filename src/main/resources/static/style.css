@@ -2,13 +2,19 @@ body {
     background-color: #cccccc;
     font-family: arial,helvetica,sans-serif;
 }
-.bookHeadline {
+tr {
     font-size: 12pt;
-    font-weight: bold;
-}
-.bookDescription {
-    font-size: 10pt;
 }
 label {
     font-weight: bold;
+}
+table {
+    border-spacing: 20px;
+}
+.customerHeadline {
+    font-weight: bold;
+}
+
+.node {
+    font-size: 10pt;
 }
