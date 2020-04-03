@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title>Customers list</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+<h2>Your Customers List</h2>
+<div th:unless="${#lists.isEmpty(customers)}">
+    <dl th:each="customer : ${customers}">
+        <dt class="customerHeadline">
+            <span th:text="${customer.firstName}">FirstName</span> by
+            <span th:text="${customer.lastName}">LastName</span>
+            <span th:text="${customer.emailAddress}">Email</span>
+            <span th:text="${customer.jobTitle}">Job</span>
+            <span th:text="${customer.mobilePhone}">Mobile phone number</span>
+            <span th:text="${customer.city}">City</span>
+        </dt>
+        <dd class="Web Page">
+<span th:if="${customer.webPage}"
+      th:text="${customer.webPage}">WebPage</span>
+            <span th:if="${customer.webPage eq null}">
+                No WebPage available
+            </span>
+        </dd>
+    </dl>
+</div>
+<div th:if="${#lists.isEmpty(customers)}">
+    <p>No customers</p>
+</div>
+
+<h3>Add a customer</h3>
+<a href="/add">add</a>
+</body>
+</html>
