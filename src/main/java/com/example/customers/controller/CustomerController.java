@@ -67,7 +67,7 @@ public class CustomerController {
         return "redirect:/customers";
     }
 
-    @PostMapping(value = "/remove-customer")
+    @PostMapping(value = "/delete-customer")
     public String removeCustomer(Integer id) {
         customerRepository.deleteById(id);
         return "redirect:/customers";

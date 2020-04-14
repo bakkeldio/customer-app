@@ -40,7 +40,7 @@
                 <span th:if="${customer.webPage eq ''}">-</span>
             </td>
             <td>
-                <form method="POST" th:action="@{/remove-customer(id = ${customer.id})}">
+                <form method="POST" th:action="@{/delete-customer(id = ${customer.id})}">
                     <input type="submit" value="delete"/>
                 </form>
             </td>
