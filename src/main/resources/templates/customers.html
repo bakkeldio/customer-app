@@ -41,12 +41,12 @@
             </td>
             <td>
                 <form method="POST" th:action="@{/remove-customer(id = ${customer.id})}">
-                    <input type="submit" value="remove"/>
+                    <input type="submit" value="delete"/>
                 </form>
             </td>
             <td>
                 <form method="GET" th:action="@{/update/{id}(id=${customer.id})}">
-                    <input type="submit" value="edit"/>
+                    <input type="submit" value="update"/>
                 </form>
             </td>
         </tr>
