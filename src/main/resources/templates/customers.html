@@ -8,12 +8,12 @@
 <body>
 <h2>Customers</h2>
 <div class="customerHeadline">
-    <a href="./add">Add customer</a>
+    <a href="./add">Add customer to list</a>
 </div>
 <div th:unless="${#lists.isEmpty(customers)}">
     <table>
         <tr class="customerHeadline">
-            <td>No</td>
+            <td>ID</td>
             <td>Full name</td>
             <td>Email</td>
             <td>Job title</td>

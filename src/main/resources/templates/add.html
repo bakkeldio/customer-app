@@ -2,24 +2,23 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Add customer</title>
+    <title>Add customer to list</title>
     <link rel="stylesheet" th:href="@{/style.css}">
 </head>
 <body>
 <h3>Add a customer</h3>
 <form method="POST" th:action="@{/add-customer}" th:object="${customer}">
-    <label>First name*:</label>
+    <label>First name:</label>
     <input type="text" name="firstName" size="50">
-    <span class="node" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First name error.</span><br>
+    <br>
 
-    <label>Last name*:</label>
+    <label>Last name:</label>
     <input type="text" name="lastName" size="50">
-    <span class="node" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">First name error.</span><br>
+    <br>
 
-    <label>Email address*:</label>
+    <label>Email address:</label>
     <input type="text" name="emailAddress" size="50">
-    <span class="node" th:if="${#fields.hasErrors('emailAddress')}" th:errors="*{emailAddress}">First name error.</span><br>
-
+    <br>
     <label>Job title:</label>
     <input type="text" name="jobTitle" size="50"><br>
 
@@ -32,7 +31,6 @@
     <label>Web page:</label>
     <input type="text" name="webPage" size="50"><br>
 
-    <span class="node">Required fields are marked as *</span><br>
     <input type="submit" value="Save">
 </form>
 </body>
